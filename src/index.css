@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    @apply bg-ink text-charcoal-200 font-body;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+@layer components {
+  .gold-line {
+    @apply h-px bg-gradient-to-r from-transparent via-gold-500 to-transparent w-full;
+  }
+  .btn-gold {
+    @apply inline-flex items-center gap-2 px-6 sm:px-8 py-3 bg-gold-500 text-ink font-body font-semibold text-xs sm:text-sm tracking-widest uppercase 
+    hover:bg-gold-400 transition-all duration-300 relative overflow-hidden;
+  }
+  .btn-outline-gold {
+    @apply inline-flex items-center gap-2 px-6 sm:px-8 py-3 border border-gold-500 text-gold-500 font-body font-semibold text-xs sm:text-sm tracking-widest uppercase 
+    hover:bg-gold-500 hover:text-ink transition-all duration-300;
+  }
+  .section-title {
+    @apply font-display text-3xl sm:text-4xl md:text-5xl font-light text-white leading-tight;
+  }
+  .section-subtitle {
+    @apply text-gold-500 text-sm font-body font-semibold tracking-[0.3em] uppercase;
+  }
+  .card-dark {
+    @apply bg-charcoal-950 border border-charcoal-900 p-8;
+  }
+  .nav-link {
+    @apply text-charcoal-300 hover:text-gold-500 font-body text-sm tracking-wider uppercase transition-colors duration-200;
+  }
+  .input-dark {
+    @apply w-full bg-charcoal-950 border border-charcoal-800 text-white px-3 py-3 font-body text-sm
+    focus:outline-none focus:border-gold-500 transition-colors placeholder-charcoal-600;
+  }
+  .admin-sidebar-link {
+    @apply flex items-center gap-3 px-4 py-3 text-charcoal-400 hover:text-gold-500 hover:bg-charcoal-900 
+    rounded transition-colors text-sm font-body cursor-pointer;
+  }
+  .admin-sidebar-link.active {
+    @apply text-gold-500 bg-charcoal-900 border-l-2 border-gold-500;
+  }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #0a0a0a; }
+::-webkit-scrollbar-thumb { background: #C9A84C; border-radius: 3px; }
+
+/* Selection */
+::selection { background: rgba(201, 168, 76, 0.3); color: #fff; }
+
+/* Page transitions */
+.page-enter { opacity: 0; transform: translateY(10px); }
+.page-enter-active { opacity: 1; transform: translateY(0); transition: all 0.4s ease; }
